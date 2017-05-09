@@ -4,22 +4,24 @@ body {
   font-size: 22px;
   color: seashell;
   text-align: center;
+  opacity: 0.9  /* generic opacity for body. overwrite for the location items. */
 }
 
 h2, h3, h4 {
   margin: 0;
   padding: 10px;
-}
+}  /* generic padding and margin for h2 through h4 */
 
 header {
   position: fixed;
-  z-index: 1;
+  z-index: 1; /* fixed header makes content section overlapping, making header overlap with z-index */
   border-bottom: 1px solid seashell;
   width: 100%;
   height: 69px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  background-color: black;
 
 
   opacity: 0.9;
@@ -51,7 +53,7 @@ a {
 .content {
 width: 1200px;
 padding-top: 69px;
-margin: auto;
+margin: 0 auto;
 
 
 }
@@ -61,7 +63,7 @@ margin: auto;
   background-image:url("../images/img-mission-background.jpg");
   height: 700px;
   width: 1200px;
-  padding-top: 70px;
+  padding-top: 69px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -80,17 +82,54 @@ margin: auto;
 
   width: 1000px;
   height: 700px;
+  margin: auto;
 
 }
 
 .tea-items {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 
 }
 
 .item img {
   height: 200px;
   margin: 10px;
+  display: block;
+}
 
+.locations-section {
+  background-image: url("../images/img-locations-background.jpg");
+  height: 500px;
+  padding-top: 69px;
+}
+
+.locations-block {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin:auto;
+}
+
+.location {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  margin: 20px;
+  flex-basis: 280px; /* flex, but set basis of 300 minus (10+10) padding to get columns with same width */
+  opacity: 1.0; /* opacity overwrite to the 0.9 generic opacity */
+}
+
+.contact {
+  height: 200px;
+  padding-top: 10px; /* added some extra padding on top for better looking */
+}
+
+
+footer {
+  padding-left: 20px;
+  text-align: left;
 }
